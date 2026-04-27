@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Solar Energy Predictor</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background: #f4f4f4;
+        }
+        .box {
+            margin-top: 30px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 340px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 0 10px gray;
+        }
+        input {
+            margin: 8px;
+            padding: 8px;
+            width: 85%;
+        }
+        button {
+            padding: 10px;
+            background: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Solar Energy Predictor</h2>
+
+    <form action="/predict" method="post">
+        <input type="number" name="ghi" placeholder="GHI (0-1200)" min="0" max="1200" step="any" required>
+        <input type="number" name="dni" placeholder="DNI (0-1200)" min="0" max="1200" step="any" required>
+        <input type="number" name="dhi" placeholder="DHI (0-600)" min="0" max="600" step="any" required>
+        <input type="number" name="temp" placeholder="Temperature (-10 to 60°C)" min="-10" max="60" step="any" required>
+        <input type="number" name="hour" placeholder="Hour (0-23)" min="0" max="23" required>
+        <input type="number" name="actual" placeholder="Actual Energy (optional)" min="0" step="any">
+
+        <button type="submit">Predict</button>
+    </form>
+
+    <!-- RESULTS -->
+    <div class="result">
+        <p>{{ prediction_text }}</p>
+        <p>{{ deviation_text }}</p>
+        <p>{{ status_text }}</p>
+        <p>{{ model_info }}</p>
+        <p style="color:red;">{{ note_text }}</p>
+    </div>
+</div>
+
+<!-- GRAPH -->
+<div style="margin-top: 30px;">
+    <h3>📊 Model Performance</h3>
+    <img src="{{ url_for('static', filename='graph.png') }}" width="450">
+</div>
+</body>
+</html>
+
