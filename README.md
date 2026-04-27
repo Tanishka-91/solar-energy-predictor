@@ -40,7 +40,7 @@ Calculates:
 Deviation
 Percentage Error
 
-🚦 3. Smart Performance Indicator
+🚦 3. Smart Performance Indicator:
 🟢 Optimal Performance
 🟡 Moderate Deviation
 🔴 Poor Performance
