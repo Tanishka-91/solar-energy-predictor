@@ -1,5 +1,6 @@
 # solar-energy-predictor
 🌞 Solar Energy Prediction & Performance Analysis System
+
 📌 Overview
 This project presents a machine learning-based system that predicts solar energy generation using environmental parameters and analyzes system performance by comparing predicted and actual energy output.
 Unlike traditional systems that only show past or current data, this system provides expected energy estimation and helps identify inefficiencies in solar panel performance.
